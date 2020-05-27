@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Estructura de Datos</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<!--<link rel="stylesheet" href="css/theme/black.css" id="theme">-->
+		<link rel="stylesheet" href="css/theme/league.css">
+		<link rel="stylesheet" href="?transition=convex#/transitions">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- ESTA ES LA PRIMERA DIAPOSITIVA -->
+				<section>
+					<h1>Algoritmos de Ordenamiento</h1>
+					
+				</section>
+				<section>
+					
+					<h3>TP 2 - Estructura de Datos - 2020</h3>
+					<a href="http://www.unahur.edu.ar/" target="_blank"><img data-src="Imagenes/Logo.png" href="" width="200" height="200"></a>
+					
+					
+					
+					<p>
+						Cichello, Alan / Guzmán, Hernán
+					</p>
+					
+					<p>
+						Prof. Gonzalez, Sergio
+					</p>
+
+				</section>
+				
+				
+
+				
+				<section>
+					<h2>Comparativa entre los distintos algoritmos de ordemaniento</h2>
+				</section>
+
+				<section>
+					<h2>
+						Los algoritmos que se analizarán serán:
+					</h2>
+					<h3>
+						Burbuja (Bubble Sort)
+					</h3>
+					<h3>
+						Inserción (Insertion Sort)
+					</h3>
+					<h3>
+						Mezcla (Merge Sort)
+					</h3>
+					<h3>
+						Rápido (Quicksort)
+					</h3>
+					<h3>
+						Selección (Selection Sort)
+					</h3>
+				</section>
+				<section>
+				<section>
+				<h3>Algaritmo de Burbuja</h3>
+				<p>La forma en que funciona este algoritmo es recorriendo la lista y comparando los valores entre si.</p>
+				<p>Por ejemplo:</p>
+				<p>Compara el valor de la posición 0 con la 1, si el valor de la posición 1 es menor que el valor de la posición 0 se intercambian los valores entre si. Si el valor de la posición 0 es menor no se intercambian</p>
+				<p>Después compara el valor de la posición 1 con el valor de la posición 2 y realiza el mismo procedimiento anterior.</p>
+				<p>Por lo tanto el algoritmo recorrera la lista tantas veces como se anecesario hasta ordenar todos los valores.</p>
+
+				</section>
+				<section>
+					<p>Se le llama algoritmo de burbuja porque los números más pequeños burbujean a la superficie que sería lo más cerca de la posición 0</p>
+					<img src="Imagenes/Burbuja.jpg" width="330" height="400">
+				</section>
+				<section>
+					<p>Primer recorrido a toda la lista</p>
+					<img src="Imagenes/PrimeraPasadaBurbuja.jpg" width="330" height="400">
+				</section>
+				<section>
+					<p>Segundo recorrido a toda la lista</p>
+					<img src="Imagenes/SegundaPasadaBurbuja.jpg" width="330" height="400">
+				</section>
+				<section>
+					<p>Tercer recorrido a toda la lista</p>
+					<img src="Imagenes/TerceraPasadaBurbuja.jpg" width="330" height="400">
+				</section>
+				<section>
+					<p>Cuarto recorrido a toda la lista</p>
+					<img src="Imagenes/CuartaPasadaBurbuja.jpg" width="330" height="300">
+				</section>
+				<section>
+					<p>Quinto recorrido a toda la lista</p>
+					<img src="Imagenes/QuintaPasadaBurbuja.jpg" width="330" height="200">
+				</section>
+				<section>
+					<h2>Rendimiento del algoritmo</h2>
+					<p>Fórmula para calcular el rendimento del algoritmo:</p>
+					<img src="Imagenes/FormulaBurbuja.jpg" width="200" height="100">
+					<p>Siendo n la cantidad de registros de la lista. Por lo que para el caso más desfavorable, si tenemos una lista ordenada de forma descendente. La fórmula en este caso sería:</p>
+					<img src="Imagenes/FormulaDesfBurbuja.jpg" width="200" height="70">
+				</section>
+				<section>
+					<p>Gráfica de comportamiento:</p>
+
+					<img src="Imagenes/GraficaBurbuja.jpg" width="600" height="400">
+					
+				</section>
+				</section>
+				<section>
+				<section>
+				<h3>Algoritmo de Inserción</h3>
+				<p>Se parte de un elemento incial <em>k</em> después se toma el elemento <em>k+1</em> y se lo compara con todos los elementos ya ordenados, osea <em>k</em>, y se detiene cuando encuentra un número menor o cuando ya no haya elementos. En ese punto se inserta el elemento <em>k+1</em> y pasa al listado de <em>k.</em></p>
+				
+
+				</section>
+				<section>
+					<p>Ejemplo en el que el elemento <em>k+1</em> es el número 31. La lista de elementos ordenados <em>k</em> son los números 17, 26, 54, 77, 93.</p>
+					<img src="Imagenes/OrdenamientoInsercion.jpg" width="450" height="400">
+				</section>
+				<section>
+					<h2>Rendimiento del algoritmo</h2>
+					<p>En el caso de que los elementos se encuentren ordenados el algoritmo realizará <em>n</em> comparaciones, siendo <em>n</em> el número de elementos de la lista:</p>
+
+					<img src="Imagenes/CasoOptimoInsercion.jpg" width="100" height="50">
+					<p>En el caso que todos los elementos de la lista estén ordenados de forma descendente la fórmula para el rendimiento del algoritmo es:</p>
+					<img src="Imagenes/PeorCasoInsercion.jpg" width="100" height="50">
+				</section>
+				<section>
+					<p>Gráfica de comportamiento:</p>
+
+					<img src="Imagenes/GraficaInsercion.jpg" width="600" height="400">
+					
+				</section>
+				</section>
+				<section>
+				<section>
+				<h3>Algaritmo de Mezcla</h3>
+				<p>Esta basado en la técnica de divide y vencerás.</p>
+				<p>
+						Es un algoritmo recursivo que divide continuamente una lista por la mitad. 
+						</p>
+						<p>
+							Si la lista está vacía o tiene un solo ítem se ordena por definición (el caso base). Si la lista tiene más de un ítem dividimos la lista e invocamos recursivamente un ordenamiento por mezcla para ambas mitades. 
+
+						</p>
+						
+				
+
+				</section>
+				<section>
+					<p>
+							Una vez que las dos mitades están ordenadas se realiza la operación fundamental denominada mezcla. La mezcla es el proceso de tomar dos listas ordenadas más pequeñas y combinarlas en una sola lista nueva y ordenada.
+
+						</p>
+				</section>
+				<section>
+					
+					<p>
+						
+						Partimos de una lista de 9 números enteros y se va dividiendo por la mitad hasta obtener una lista de un solo número.
+					</p>
+					<img src="Imagenes/Division.png" width="500" height="400">
+				</section>
+				<section>
+					
+					<p>
+						
+						Cuando ya tenemos dos listas ordenadas comenzamos a mezclarlas para obtener una lista nueva y ordenada.
+					</p>
+					<p>Para realizar la división de la lista se utiliza una función recursiva hasta obtener una lista de un solo número.</p>
+					<img src="Imagenes/Mezcla.png" width="500" height="400">
+				</section>
+				<section>
+					<h2>Rendimiento del algoritmo</h2>
+					<p>Como no es necesaria la búsqueda en toda la lista sino en pociones mas pequeñas se dice que la fórmula de este algoritmo es:</p>
+
+					<img src="Imagenes/FormulaMezcla.jpg" width="100" height="50">
+					<p>Este algoritmo es utilizado por Perl 5.8 por defecto y el ordenamiento de Arrays en Java se realiza con este mismo algoritmo.</p>
+					
+				</section>
+				<section>
+					<p>Gráfica de comportamiento:</p>
+
+					<img src="Imagenes/GraficaMezcla.jpg" width="600" height="400">
+					
+				</section>
+
+				<section>
+					
+						<h2>Código</h2>
+						<p>Para realizar la división de la lista se utiliza una función recursiva hasta obtener una lista de un solo número.</p>
+						<pre><code class="hljs" >
+def ordenamientoPorMezcla(unaLista, listaCompleta):
+    print("Dividir ",unaLista)
+    if len(unaLista)>1:
+       
+        '''divido la tabla en dos'''
+        mitad = len(unaLista)//2
+        '''DE LA MITAD TOMO LA PARTE DERECHA'''
+        mitadIzquierda = unaLista[:mitad]
+        '''DE LA MITAD TOMO LA PARTE IZQUIERDA'''
+        mitadDerecha = unaLista[mitad:]
+
+        '''UTILIZO RECUSRSIVIDAD PARA VOLVER A DIVIDIR LA LISTA'''
+        ordenamientoPorMezcla(mitadIzquierda, listaCompleta)
+        ordenamientoPorMezcla(mitadDerecha, listaCompleta)
+ 
+        ordenar(mitadIzquierda, mitadDerecha)
+        print("Arreglo completo:",listaCompleta)
+
+					</code></pre>
+					</section>
+					<section>
+						<p>Cuando la lista tiene un solo número llama a la función <em>ordenar</em> para que los números se mezclen de forma ordenada en la lista. Consultando si la mitad izquierda </p>
+						<pre><code class="hljs" >
+def ordenar(mitadIzquierda, mitadDerecha):
+    i, j = 0,0
+    k=0
+    
+    result = np.zeros(len(mitadIzquierda) + len(mitadDerecha), int)
+   
+    while i < len(mitadIzquierda) and j < len(mitadDerecha):
+        if mitadIzquierda[i] < mitadDerecha[j]:
+            result[k] = mitadIzquierda[i]
+            i=i+1
+        else:
+            result[k]=mitadDerecha[j]
+            j=j+1
+        k=k+1
+    
+    '''SI TENGO MAS NUMEROS EN LA MITAD IZQUIERDA LOS RECORRO Y LOS AGREGO'''
+    while i< len(mitadIzquierda):
+        result[k] = mitadIzquierda[i]
+        i=i+1
+        k=k+1
+    
+    '''SI TENGO MAS NUMEROS EN LA MITAD DERECHA LOS RECORRO Y LOS AGREGO'''
+    while j< len(mitadDerecha):
+        result[k] = mitadDerecha[j]
+        j=j+1
+        k=k+1
+                
+    i, j = 0,0
+    
+    for num in result:
+        if(i<=len(mitadIzquierda) - 1):
+            mitadIzquierda[i] = num
+            i = i+1
+            
+        else:
+            mitadDerecha[j] = num
+            j=j+1
+
+
+					</code></pre>
+					</section>
+
+
+
+					
+					
+				</section>
+				<section>
+					
+				<section>
+				<h3>Algaritmo Rápido</h3>
+				<p>Primero se selecciona un elemento de la lista a ordenar al que se le llamará <strong>pivote</strong>. Luego se recorre la lista y se sitúan los números menores a un costado de la lista y los mayores al otro lado.</p>
+				<p>Como resultado se tienen dos sublistas. Para continuar con el procedimiento se deberá realizar el mismo paso anterior, se elegirá un pivote por cada lista y se obtendrán dos sublistas.</p>
+				<p>Cuando las listas resultantes tengan un solo elemento se tendrá ordenada la lista principal.</p>
+				
+
+				</section>
+				<section>
+					<p>Se elige el primer pivote, que en este caso será 54</p>
+					<img src="Imagenes/PrimerPivote.jpg" width="400" height="100">
+					<p>Se eligen dos marcadores de posición <em>marcaIzq</em> y <em>marcaDer</em> que se encontrarán al principio y final de los items restantes de la lista. El objetivo es mover los items que estén en el lado equivocado.</p>
+					
+				</section>
+				<section>
+					<p>Pasos</p>
+					<img src="Imagenes/Pasos.jpg" width="400" height="500">
+					
+				</section>
+				<section>
+					<h2>Rendimiento del algoritmo</h2>
+					<p>La eficiencia del algoritmo depende de la elección del pivote.</p>
+					<p>El mejor caso se produce cuando el pivote termina en el centro de la lista. Para este caso la fórmula del algoritmo será:</p>
+
+					<img src="Imagenes/CasoOptimoRapido.jpg" width="100" height="50">
+					
+				</section>
+				<section>
+					<p>El peor caso se produce cuando el pivote se encuentra en un extremo de la lista. El orden de complejidad del algoritmo será:</p>
+					<img src="Imagenes/CasoDesfavorableRapido.jpg" width="100" height="50">
+				</section>
+				<section>
+					<p>Gráfica de comportamiento:</p>
+
+					<img src="Imagenes/GraficaRapido.jpg" width="600" height="400">
+					
+				</section>
+				</section>
+				
+				
+
+
+				<section>
+					
+				<section>
+				<h3>Algaritmo de selección</h3>
+				<p>Primero se busca el elemento máximo de la lista y se intercambia por el último.</p>
+				<p>Luego se busca el siguiente número máximo de la lista y se intercambia por el anteúltimo.</p>
+				<p>Y asi se continua hasta terminar con todos los elementos de la lista</p>
+				<p>Su funcionamiento es un poco mejor que el del <em>algoritmo de burbuja</em> ya que realiza un solo intercambio por pasada</p>
+				
+
+				</section>
+				
+				<section>
+					<p>Pasos</p>
+					<img src="Imagenes/PasosSeleccion.jpg" width="400" height="500">
+					
+				</section>
+				<section>
+					<h2>Rendimiento del algoritmo</h2>
+					<p>Siendo n la cantidad de registros de la lista. Por lo que para el caso más desfavorable, si tenemos una lista ordenada de forma descendente. La fórmula en este sería:</p>
+
+					<img src="Imagenes/FormulaSeleccion.jpg" width="100" height="50">
+					
+				</section>
+				
+
+				<section>
+					<p>Gráfica de comportamiento:</p>
+
+					<img src="Imagenes/GraficaSeleccion.jpg" width="600" height="400">
+					
+				</section>
+				
+				</section>
+
+
+				<section>
+					<h2>Gráfico de comparación</h2>
+				<img src="Imagenes/GraficaTodos.jpg" width="700" height="450">
+				</section>
+
+				
+				<section>
+					<p>En el gráfico se puede observar que el algoritmo con peor comportamiento es el de <em>Burbuja</em> seguido por el de <em>Inserción</em> y después el de <em>Selección</em>. Los que tienen un comportamiento parecido son el de <em>Mezcla</em> y el <em>Rápido</em></p>
+				</section>
+
+				<section>
+					<section>
+					<h2>Algoritmo de Búsqueda</h2>
+				</section>
+
+				<section>
+					<h3>Búsqueda Binaria</h3>
+					<p>Se parte desde una lista ordenada, como la que devuelve del algoritmo anterior. Lo que realiza esta búsqueda es consultar si el valor buscado se encuentra en la mitad, sino es así, consulta si el valor a buscar es mayor al que se encuentra en la mitad de la lista.</p>
+					<p>Si es mayor se continuará la búsqueda en la mitad con valores mayores. Realizando el procedimiento anterior.</p>
+					<p>Ahora si el valor es menor, la búsqueda se realizará en la mitad con los valores menores.</p>
+				</section>
+				<section>
+						<p>Lo que devuelve la función, es si el número se encuentra o no en la lista. Recibirá por parámetro la lista y el valor que se buscará en ella.</p>
+						<pre><code class="hljs" >
+def busquedaBinaria(arrayOrdenado, valorABuscar):
+        if len(arrayOrdenado) == 0:
+            return False
+        else:
+            posicionMitad = len(arrayOrdenado)//2
+            if arrayOrdenado[posicionMitad]==valorABuscar:
+              
+              if valorABuscar< arrayOrdenado[posicionMitad]:
+                return busquedaBinaria(arrayOrdenado[:posicionMitad],valorABuscar)
+              else:
+                return busquedaBinaria(arrayOrdenado[posicionMitad+1:],valorABuscar)  
+            else:
+                return True
+
+
+
+					</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h1>FIN</h1>
+				</section>
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
